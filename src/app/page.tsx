@@ -186,25 +186,6 @@ export default function Home() {
           />
         </div>
 
-        {/* {roomInputs.map((room, index) => (
-          <div key={index} className="border border-gray-300 rounded p-4 mb-4">
-            <h2 className="font-semibold mb-2">Room {index + 1}</h2>
-            <div className="grid grid-cols-2 gap-4">
-              {['name',  'length', 'width', 'height', 'thickness'].map((field) => (
-                <div key={field} className="mb-2">
-                  <label className="block text-sm font-medium mb-1">{field.charAt(0).toUpperCase() + field.slice(1)}</label>
-                  <input
-                    type={['length', 'width', 'height', 'thickness'].includes(field) ? 'number' : 'text'}
-                    value={(room as any)[field]}
-                    onChange={(e) => handleRoomInputChange(index, field as keyof RoomInput, e.target.value)}
-                    className="w-full border rounded px-3 py-2"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        ))} */}
-
 {roomInputs.length > 0 && (
           <RoomForm 
             rooms={roomInputs} 

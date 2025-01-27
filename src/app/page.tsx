@@ -37,7 +37,7 @@ const RoomForm: React.FC<RoomFormProps> = ({ rooms, currentIndex, setCurrentInde
             </label>
             <input
               type={['length', 'width', 'height', 'thickness'].includes(field) ? 'number' : 'text'}
-              value={(room as any)[field]}
+              value={room[field as keyof RoomInput]}
               onChange={(e) => onChange(currentIndex, field as keyof RoomInput, e.target.value)}
               className="w-full border rounded px-3 py-2"
             />
@@ -223,7 +223,7 @@ export default function Home() {
                     </tr>
                   ))}
                   <tr className="bg-gray-300 font-semibold">
-                    <td className="border px-4 py-2 text-right" colSpan={2}>
+                    <td className="border px-4 py-2 text-right" colSpan={1}>
                       Total:
                     </td>
                     <td className="border px-4 py-2">{totalWallVolume}</td>
